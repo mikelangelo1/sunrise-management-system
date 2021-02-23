@@ -1,11 +1,11 @@
 // require("dotenv").config();
-const dotenv = require("dotenv")
 const mongoose = require("mongoose");
 const express = require("express");
 const cors = require("cors");
 // const path = require("path");
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser')
+const dotenv = require("dotenv")
 dotenv.config();
 
 
@@ -26,7 +26,11 @@ app.use(
  })
 )
 
-mongoose.connect('mongodb://localhost/local', { useNewUrlParser: true, useUnifiedTopology: true });
+const uri = 'mongodb+srv://sunrise-keepers-school-management-system:sunrisekeepers@sunrise-keepers-cluster.zulpb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+console.log(uri)
+mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
+
+// mongoose.connect('mongodb://localhost/local', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const connection = mongoose.connection;
 connection.once('open', () => {

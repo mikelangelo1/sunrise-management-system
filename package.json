@@ -6,10 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cd client && npm run build",
-    "install-client": "cd client && npm install",
-    "start": "nodemon backend/server.js",
+    "install-build-client": "cd client && npm install && npm run build",
+    "install-backend": "cd backend && npm install",
+    "start": "node backend/server.js",
     "client": "cd client && npm start",
-    "dev": "concurrently \"npm start\" \"npm run client\""
+    "current-directory": "npm install",
+    "dev": "concurrently \"npm start\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run current-directory && npm run install-backend && npm run install-build-client"
   },
   "keywords": [],
   "author": "",
@@ -25,5 +28,8 @@
     "react-datepicker": "^3.4.1",
     "react-dropzone": "^11.2.0",
     "sweetalert": "^2.1.2"
+  },
+  "engines": {
+   "node": "13.7.0"
   }
 }
