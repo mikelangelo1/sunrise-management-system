@@ -11,12 +11,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cd client && npm run build",
     "install-build-client": "cd client && npm install && npm run build",
-    "install-backend": "cd backend && npm install && node server.js",
+    "install-backend": "cd backend && npm install",
     "start": "node backend/server.js",
     "client": "cd client && npm start",
     "current-directory": "npm install",
     "dev": "concurrently \"npm start\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run current-directory && npm run install-backend && npm run install-build-client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run current-directory && npm run install-backend && npm run install-build-client && npm start"
   },
   "keywords": [],
   "author": "",
