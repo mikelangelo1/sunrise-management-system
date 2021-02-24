@@ -16,7 +16,7 @@
     "client": "cd client && npm start",
     "current-directory": "npm install",
     "dev": "concurrently \"npm start\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run current-directory && npm run install-backend && npm run install-build-client && npm start"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run current-directory && npm run install-build-client"
   },
   "keywords": [],
   "author": "",
