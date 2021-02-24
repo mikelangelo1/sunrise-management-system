@@ -26,9 +26,8 @@ app.use(
  })
 )
 
-const uri = 'mongodb+srv://sunrise-keepers-school-management-system:sunrisekeepers@sunrise-keepers-cluster.zulpb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-console.log(uri)
-mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
+const MONGO_URI = 'mongodb+srv://sunrise-keepers-school-management-system:sunrisekeepers@sunrise-keepers-cluster.zulpb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+mongoose.connect(MONGO_URI, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
 
 // mongoose.connect('mongodb://localhost/local', { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -67,9 +66,9 @@ app.use('/auth', userRouter)
 // }
 
 if (process.env.NODE_ENV === "production") {
- app.use(express.static("build"));
+ app.use(express.static("client/build"));
  app.get("*", (req, res) => {
-   res.sendFile(path.resolve(__dirname,  "build", "index.html"));
+   res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
  });
 }
 
