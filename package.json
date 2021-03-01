@@ -1,8 +1,7 @@
 {
   "name": "sunrise-management-system",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Sunrise Keepers Managementment System Parent Folder",
   "engines": {
     "node": "13.7.0",
     "npm": "6.13.6"
@@ -16,7 +15,7 @@
     "client": "cd client && npm start",
     "current-directory": "npm install",
     "dev": "concurrently \"npm start\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run current-directory && npm run install-backend && npm run install-build-client"
+    "heroku-postbuild": "npm install && npm run install-backend && npm run install-build-client"
   },
   "keywords": [],
   "author": "",
