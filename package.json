@@ -1,21 +1,35 @@
 {
   "name": "sunrise-management-system",
   "version": "1.0.0",
-  "description": "Sunrise Keepers Managementment System Parent Folder",
+  "description": "Sunrise Keepers Management System",
+  "main": "server.js",
   "engines": {
-    "node": "13.7.0",
-    "npm": "6.13.6"
-  },
+   "node": "13.7.0",
+   "npm": "6.13.6"
+ },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NPM_CONFIG_PRODUCTION=false cd backend && npm install && node backend/server.js && npm run build"
-
+    "start": "node backend/server.js",
+    "backend": "nodemon backend/server.js",
+    "frontend": "npm run front --prefix client",
+    "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "concurrently": "^5.3.0",
-    "node-sass": "^4.14.1"
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.15",
+    "multer": "^1.4.2",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.2"
   }
 }
