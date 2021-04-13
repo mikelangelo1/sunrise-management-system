@@ -21,7 +21,7 @@ export default function Register() {
    confirmPassword
   };
 
-  axios.post("http://localhost:5000/auth/", registerData)
+  axios.post("sunrise-management-system.herokuapp.com/auth/", registerData)
    .then(res => {
     console.log(res.data)
     swal("Good job", "Registration successful", "success")
