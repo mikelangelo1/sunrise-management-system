@@ -20,7 +20,7 @@ export default function Login() {
     password,
    };
 
-   await axios.post("sunrise-management-system.herokuapp.com/auth/login", loginData)
+   await axios.post("https://sunrise-management-system.herokuapp.com/auth/login", loginData)
    swal("Good job", "Login successful", "success")
    await getLoggedIn()
    history.push("/")

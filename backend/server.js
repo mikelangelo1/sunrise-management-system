@@ -1,12 +1,12 @@
 // require("dotenv").config();
 const mongoose = require("mongoose");
 const express = require("express");
-const cors = require("cors");
 const path = require("path");
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser')
 const dotenv = require("dotenv")
 dotenv.config();
+const cors = require("cors");
 
 
 const app = express();
@@ -21,8 +21,8 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(
  cors({
-  origin: ['https://skms.netlify.app/', 'https://sunrise-management-system.herokuapp.com/auth/loggedIn'],
-  methods: ["GET", "POST"],
+  origin: ['https://skms.netlify.app'],
+  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
  })
 )

@@ -9,7 +9,7 @@ function LogoutBtn() {
  const history = useHistory();
 
  async function logout() {
-  await axios.get("sunrise-management-system.herokuapp.com/auth/logout");
+  await axios.get("https://sunrise-management-system.herokuapp.com/auth/logout");
   await getLoggedIn();
   history.push("/");
  }
