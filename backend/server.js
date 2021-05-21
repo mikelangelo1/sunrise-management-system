@@ -27,6 +27,10 @@ app.use(
  })
 )
 
+app.get("/", (req, res) => {
+ res.send("Server is running.");
+})
+
 const MONGO_URI = 'mongodb+srv://sunrise-keepers-school-management-system:sunrisekeepers@sunrise-keepers-cluster.zulpb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 mongoose.connect(MONGO_URI, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
 
