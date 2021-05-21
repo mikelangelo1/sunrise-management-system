@@ -21,7 +21,8 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(
  cors({
-  origin: ["https://skms.netlify.app/"],
+  origin: "*",
+  methods: ["GET", "POST"],
   credentials: true,
  })
 )
