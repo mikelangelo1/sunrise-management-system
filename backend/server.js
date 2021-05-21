@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(
  cors({
-  origin: "*",
+  origin: ['https://skms.netlify.app/', 'https://sunrise-management-system.herokuapp.com/auth/loggedIn'],
   methods: ["GET", "POST"],
   credentials: true,
  })
