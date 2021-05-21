@@ -141,7 +141,7 @@ export default class AddStudent extends Component {
 
   console.log(student);
 
-  axios.post('http://localhost:5000/students/add', student)
+  axios.post('https://sunrise-management-system.herokuapp.com/students/add', student)
    .then(res => {
     console.log(res.data)
     swal("Good job", "Student successfully added", "success")

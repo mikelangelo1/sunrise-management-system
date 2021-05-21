@@ -37,7 +37,7 @@ export default class AllStudent extends Component {
  }
 
  componentDidMount() {
-  axios.get('http://localhost:5000/students/')
+  axios.get('https://sunrise-management-system.herokuapp.com/students/')
    .then(response => {
     this.setState({ students: response.data })
    })
@@ -47,7 +47,7 @@ export default class AllStudent extends Component {
  }
 
  deleteStudent(id) {
-  axios.delete('http://localhost:5000/students/' + id)
+  axios.delete('https://sunrise-management-system.herokuapp.com/students/' + id)
    .then(res => {
     console.log(res.data);
     console.log('Student successfully deleted')

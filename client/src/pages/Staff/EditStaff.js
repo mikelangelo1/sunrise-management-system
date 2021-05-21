@@ -143,7 +143,7 @@ export default class EditStaff extends Component {
 
   console.log(staff);
 
-  axios.post('http://localhost:5000/staffs/update/' + this.props.match.params.id, staff)
+  axios.post('https://sunrise-management-system.herokuapp.com/staffs/update/' + this.props.match.params.id, staff)
    .then(res => {
     console.log(res.data)
     console.log(staff)

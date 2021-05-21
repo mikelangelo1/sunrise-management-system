@@ -44,7 +44,7 @@ export default class AllStaffs extends Component {
  }
 
  deleteStaff(id) {
-  axios.delete('http://localhost:5000/staffs/' + id)
+  axios.delete('https://sunrise-management-system.herokuapp.com/staffs/' + id)
    .then(res => {
     console.log(res.data)
     console.log('Staff successfully deleted')

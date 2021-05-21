@@ -11,7 +11,7 @@ export default class Home extends Component {
  }
 
  componentDidMount() {
-  axios.get('http://localhost:5000/students')
+  axios.get('https://sunrise-management-system.herokuapp.com/students')
    .then(response => {
     this.setState({students: response.data.length})
     // if (response.data.length > 0) {
