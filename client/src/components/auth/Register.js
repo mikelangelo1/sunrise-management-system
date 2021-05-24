@@ -13,7 +13,9 @@ export default function Register() {
  const history = useHistory()
 
  function register(e) {
+  axios.defaults.headers.post['Access-Control-Allow-Methods'] = 'PATCH, DELETE, POST, GET, OPTIONS';
   e.preventDefault();
+  // https://sunrise-management-system.herokuapp.com/auth/ http://localhost:5000/auth
 
   const registerData = {
    email,
@@ -21,7 +23,13 @@ export default function Register() {
    confirmPassword
   };
 
-  axios.post("https://sunrise-management-system.herokuapp.com/auth/", registerData)
+  axios.post("https://sunrise-management-system.herokuapp.com/auth/", {
+   registerData
+  },
+   {
+    headers: { 'JWT-SECRET': process.env.JWT_SECRET }
+   }
+  )
    .then(res => {
     console.log(res.data)
     swal("Good job", "Registration successful", "success")

@@ -173,7 +173,7 @@ export default class Home extends Component {
           <li className="list-group-item px-0 border-top-0 d-flex justify-content-between"><span className="mb-0 text-muted">April 23</span>
            <a href="javascript:void(0);"><i className="la la-heart-o mr-1"></i><strong>230</strong></a></li>
           <li className="list-group-item px-0 d-flex justify-content-between">
-           <span class="mb-0">Duration :</span><strong>12 Months</strong></li>
+           <span className="mb-0">Duration :</span><strong>12 Months</strong></li>
           <li className="list-group-item px-0 d-flex justify-content-between">
            <span className="mb-0">Professor :</span><strong>Jimmy Morris</strong></li>
           <li className="list-group-item px-0 d-flex justify-content-between">
@@ -213,7 +213,7 @@ export default class Home extends Component {
           <li className="list-group-item px-0 d-flex justify-content-between">
            <span className="mb-0">Duration :</span><strong>12 Months</strong></li>
           <li className="list-group-item px-0 d-flex justify-content-between">
-           <span class="mb-0">Professor :</span><strong>Nashid Martines</strong></li>
+           <span className="mb-0">Professor :</span><strong>Nashid Martines</strong></li>
           <li className="list-group-item px-0 d-flex justify-content-between">
            <span><i className="fa fa-graduation-cap text-primary mr-2"></i>Student</span><strong>+120</strong></li>
          </ul>
@@ -231,7 +231,7 @@ export default class Home extends Component {
             <div className="input-group-prepend">
              <span className="input-group-text">To</span>
             </div>
-            <input type="text" class="form-control" />
+            <input type="text" className="form-control" />
            </div>
           </div>
           <div className="form-group">
@@ -239,7 +239,7 @@ export default class Home extends Component {
             <div className="input-group-prepend">
              <span className="input-group-text">Subject</span>
             </div>
-            <input type="text" class="form-control" />
+            <input type="text" className="form-control" />
            </div>
           </div>
           <div className="form-group">
@@ -299,7 +299,7 @@ export default class Home extends Component {
             <tr>
              <td>452 </td>
              <td>Nashid Martines</td>
-             <td><div class="ico-sparkline"><div id="widget_StackedBarChart"></div></div></td>
+             <td><div className="ico-sparkline"><div id="widget_StackedBarChart"></div></div></td>
              <td>
               <a href="javascript:void(0);" className="btn btn-sm btn-primary"><i className="la la-pencil"></i></a>
               <a href="javascript:void(0);" className="btn btn-sm btn-danger"><i className="la la-trash-o"></i></a>

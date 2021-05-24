@@ -12,6 +12,8 @@ export default function Login() {
  const history = useHistory();
 
  async function login(e) {
+  axios.defaults.headers.post['Access-Control-Allow-Methods'] = 'PATCH, DELETE, POST, GET, OPTIONS';
+
   e.preventDefault();
 
   try {
@@ -19,12 +21,18 @@ export default function Login() {
     email,
     password,
    };
+   // https://sunrise-management-system.herokuapp.com/auth/login
 
-   await axios.post("https://sunrise-management-system.herokuapp.com/auth/login", loginData)
+   await axios.post("https://sunrise-management-system.herokuapp.com/auth/login", {
+    loginData
+   },
+    {
+     headers: { 'JWT-SECRET': process.env.JWT_SECRET }
+    }
+   )
    swal("Good job", "Login successful", "success")
    await getLoggedIn()
    history.push("/")
-
   } catch (error) {
    console.log(error)
    swal("Sorry you are unauthorised", "Wrong email or password", "error")
