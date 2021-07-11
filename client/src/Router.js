@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import AuthContext from './context/AuthContext'
-import { BrowserRouter, Switch, Route } from "react-router-dom"
+import { HashRouter, Switch, Route } from "react-router-dom"
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Home from "./pages/Home"
@@ -36,7 +36,7 @@ function Router() {
     const { loggedIn } = useContext(AuthContext);
     return (
         <div>
-            <BrowserRouter>
+            <HashRouter>
                 <Navbar />
                 <Sidebar />
                 <Switch>
