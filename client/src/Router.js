@@ -88,7 +88,7 @@ function Router() {
                     }
 
                 </Switch>
-            </BrowserRouter>
+            </HashRouter>
             <Footer />
         </div>
     )
