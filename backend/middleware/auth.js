@@ -9,7 +9,7 @@ async function auth(req, res, next) {
 
         if (!token) return res.status(401).json({ errorMessage: "Unauthorized" });
 
-        const verified = await jwt.verify(token, process.env.JWT_SECRET);
+        const verified = await jwt.verify(token, 'fZJ9K9c55hS(y7Qt)YB5QSq$kp9TP&_w%!(5v8&aVHM3E)j7n');
         req.user = verified.user;
 
         next();

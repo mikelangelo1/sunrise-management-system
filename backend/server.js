@@ -38,10 +38,10 @@ app.get("/", (req, res) => {
  res.send("Server is running.");
 })
 
-// const MONGO_URI = 'mongodb+srv://sunrise-keepers-school-management-system:sunrisekeepers@sunrise-keepers-cluster.zulpb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const MONGO_URI = 'mongodb+srv://sunrise-keepers-school-management-system:sunrisekeepers@sunrise-keepers-cluster.zulpb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 // mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
-const uri = process.env.ATLAS_URI
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+// const uri = process.env.ATLAS_URI
+mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const connection = mongoose.connection;
 connection.once('open', () => {
