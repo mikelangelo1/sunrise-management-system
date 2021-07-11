@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import AuthContext from './context/AuthContext'
-import { BrowserRouter, Switch, Route} from "react-router-dom"
+import { BrowserRouter, Switch, Route } from "react-router-dom"
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Home from "./pages/Home"
@@ -33,63 +33,65 @@ import Login from "./components/auth/Login"
 
 
 function Router() {
- const { loggedIn } = useContext(AuthContext);
- return (
-  <BrowserRouter>
-   <Navbar />
-   <Sidebar />
-   <Switch>
-    <Route exact path="/" component={Home} />
-    {
-     loggedIn === false && (
-      <>
-       <Route path="/register" component={Register} />
-       <Route path="/login" component={Login} />
-      </>
-     )
-    }
+    const { loggedIn } = useContext(AuthContext);
+    return (
+        <div>
+            <BrowserRouter>
+                <Navbar />
+                <Sidebar />
+                <Switch>
+                    <Route exact path="/" component={Home} />
+                    {
+                        loggedIn === false && (
+                            <>
+                                <Route path="/register" component={Register} />
+                                <Route path="/login" component={Login} />
+                            </>
+                        )
+                    }
 
-    {
-     loggedIn === true && (
-      <>
-       <Route path="/event-management" component={EventManagement} />
+                    {
+                        loggedIn === true && (
+                            <>
+                                <Route path="/event-management" component={EventManagement} />
 
-       {/* Staff Frontend Routes */}
-       <Route path="/all-staffs" component={AllStaffs} />
-       <Route path="/add-staff" component={AddStaff} />
-       <Route path="/edit-staff/:id" component={EditStaff} />
+                                {/* Staff Frontend Routes */}
+                                <Route path="/all-staffs" component={AllStaffs} />
+                                <Route path="/add-staff" component={AddStaff} />
+                                <Route path="/edit-staff/:id" component={EditStaff} />
 
-       {/* Student Frontend Route */}
-       <Route path="/all-students" component={AllStudents} />
-       <Route path="/add-student" component={AddStudent} />
-       <Route path="/edit-student/:id" component={EditStudent} />
+                                {/* Student Frontend Route */}
+                                <Route path="/all-students" component={AllStudents} />
+                                <Route path="/add-student" component={AddStudent} />
+                                <Route path="/edit-student/:id" component={EditStudent} />
 
-       {/* Result Frontend Route */}
-       <Route path="/all-results" component={AllResult} />
-       <Route path="/add-new-result" component={AddNewResult} />
-       <Route path="/edit-result/:id" component={EditResult} />
+                                {/* Result Frontend Route */}
+                                <Route path="/all-results" component={AllResult} />
+                                <Route path="/add-new-result" component={AddNewResult} />
+                                <Route path="/edit-result/:id" component={EditResult} />
 
 
-       <Route path="/add-new-expense" component={AddNewExpense} />
-       <Route path="/all-expenses" component={AllExpenses} />
+                                <Route path="/add-new-expense" component={AddNewExpense} />
+                                <Route path="/all-expenses" component={AllExpenses} />
 
-       <Route path="/add-fees" component={AddFees} />
-       <Route path="/upload-assignment" component={UploadAssignment} />
+                                <Route path="/add-fees" component={AddFees} />
+                                <Route path="/upload-assignment" component={UploadAssignment} />
 
-       <Route path="/teachers" component={ForTeachers} />
+                                <Route path="/teachers" component={ForTeachers} />
 
-       {/* <Route path="/teachers/:home/" component={TeachersHome} /> */}
+                                {/* <Route path="/teachers/:home/" component={TeachersHome} /> */}
 
-       <Route path="/parents" component={ForParents} />
+                                <Route path="/parents" component={ForParents} />
 
-      </>
-     )
-    }
+                            </>
+                        )
+                    }
 
-   </Switch>
-   <Footer />
-  </BrowserRouter>
- )
+                </Switch>
+            </BrowserRouter>
+            <Footer />
+        </div>
+    )
 }
 
 export default Router

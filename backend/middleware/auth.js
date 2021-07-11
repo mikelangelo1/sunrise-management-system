@@ -1,19 +1,22 @@
+const cookieParser = require("cookie-parser")
 const jwt = require("jsonwebtoken");
 
-function auth(req, res, next) {
- try {
-  const token = req.cookies.token;
-  
-  if (!token) return res.status(401).json({ errorMessage: "Unauthorized" });
+async function auth(req, res, next) {
+    try {
+        //  const token = await req.cookies.token;
+        const token = await req.body.token || req.query.token || req.cookies['x-access-token'] || req.headers['x-access-token'];
+        console.log(token);
 
-  const verified = jwt.verify(token, process.env.JWT_SECRET);
-  req.user = verified.user;
+        if (!token) return res.status(401).json({ errorMessage: "Unauthorized" });
 
-  next();
- } catch (err) {
-  console.error(err);
-  res.status(401).json({ ErrorMessage: "Unauthorized" });
- }
+        const verified = await jwt.verify(token, process.env.JWT_SECRET);
+        req.user = verified.user;
+
+        next();
+    } catch (err) {
+        console.error(err);
+        res.status(401).json({ ErrorMessage: "Unauthorized" });
+    }
 }
 
 module.exports = auth;

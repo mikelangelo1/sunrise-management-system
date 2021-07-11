@@ -12,7 +12,7 @@ export default function Register() {
  const { getLoggedIn } = useContext(AuthContext);
  const history = useHistory()
 
- function register(e) {
+ async function register(e) {
   axios.defaults.headers.post['Access-Control-Allow-Methods'] = 'PATCH, DELETE, POST, GET, OPTIONS';
   e.preventDefault();
   // https://sunrise-management-system.herokuapp.com/auth/ http://localhost:5000/auth
@@ -22,12 +22,15 @@ export default function Register() {
    password,
    confirmPassword
   };
+  // https://sunrise-management-system.herokuapp.com/auth/",
 
-  axios.post("https://sunrise-management-system.herokuapp.com/auth/", {
+  //  http://localhost:5000/auth/
+
+  await axios.post("http://localhost:5000/auth/", {
    registerData
   },
    {
-    headers: { 'JWT-SECRET': process.env.JWT_SECRET }
+    headers: { JWT_SECRET: process.env.JWT_SECRET }
    }
   )
    .then(res => {

@@ -22,12 +22,13 @@ export default function Login() {
     password,
    };
    // https://sunrise-management-system.herokuapp.com/auth/login
+  //  http://localhost:5000/auth/login
 
-   await axios.post("https://sunrise-management-system.herokuapp.com/auth/login", {
+   await axios.post("http://localhost:5000/auth/login", {
     loginData
    },
     {
-     headers: { 'JWT-SECRET': process.env.JWT_SECRET }
+     headers: { JWT_SECRET: process.env.JWT_SECRET }
     }
    )
    swal("Good job", "Login successful", "success")

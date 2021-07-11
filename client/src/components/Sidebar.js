@@ -8,7 +8,7 @@ export default function Sidebar() {
  const { loggedIn } = useContext(AuthContext)
 
  return (
-  <div className="dlabnav">
+  <div style={{height: '100%'}} className="dlabnav">
    <div className="dlabnav-scroll">
     <ul className="metismenu" id="menu">
      {

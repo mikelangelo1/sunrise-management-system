@@ -1,8 +1,8 @@
 // require("dotenv").config();
 const mongoose = require("mongoose");
 const express = require("express");
-const path = require("path");
 const bodyParser = require('body-parser');
+const path = require("path");
 const cookieParser = require('cookie-parser');
 const cors = require("cors");
 const dotenv = require("dotenv");
@@ -25,7 +25,9 @@ app.use(bodyParser.urlencoded({
 app.use(
  cors({
   // origin: ['https://skms.netlify.app http://localhost:3001/'],
-  origin: ['https://skms.netlify.app'],
+//   origin: ['http://localhost:3000'],
+  origin: ['http://localhost:3000'],
+
 
   methods: ["GET", "PATCH", "OPTIONS", "POST", "PUT", "DELETE"],
   credentials: true,

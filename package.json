@@ -9,7 +9,8 @@
  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node backend/server.js && cd client && npm install && npm run build"
+    "start": "cd client && npm install && npm run build",
+    "dev": "cd client && npm start"
   },
   "keywords": [],
   "author": "",

@@ -27,7 +27,7 @@
  <link rel="stylesheet" href="vendor/jqvmap/css/jqvmap.min.css">
  <link rel="stylesheet" href="vendor/chartist/css/chartist.min.css">
  <!-- Summernote -->
- <link href="./vendor/summernote/summernote.css" rel="stylesheet">
+ <link href="vendor/summernote/summernote.css" rel="stylesheet">
  <link rel="stylesheet" href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css">
  <link rel="stylesheet" href="css/style.css">
  <link rel="stylesheet" href="css/skin-3.css">
@@ -59,23 +59,23 @@
  <script src="js/dlabnav-init.js"></script>
 
  <!-- Chart sparkline plugin files -->
- <script src="./vendor/jquery-sparkline/jquery.sparkline.min.js"></script>
- <script src="./js/plugins-init/sparkline-init.js"></script>
+ <script src="vendor/jquery-sparkline/jquery.sparkline.min.js"></script>
+ <script src="js/plugins-init/sparkline-init.js"></script>
 
  <!-- Chart Morris plugin files -->
- <script src="./vendor/raphael/raphael.min.js"></script>
- <script src="./vendor/morris/morris.min.js"></script>
+ <script src="vendor/raphael/raphael.min.js"></script>
+ <script src="vendor/morris/morris.min.js"></script>
 
  <!-- Init file -->
- <script src="./js/plugins-init/widgets-script-init.js"></script>
+ <script src="js/plugins-init/widgets-script-init.js"></script>
 
  <!-- Demo scripts -->
  <script src="js/dashboard/dashboard.js"></script>
 
  <!-- Summernote -->
- <script src="./vendor/summernote/js/summernote.min.js"></script>
+ <script src="vendor/summernote/js/summernote.min.js"></script>
  <!-- Summernote init -->
- <script src="./js/plugins-init/summernote-init.js"></script>
+ <script src="js/plugins-init/summernote-init.js"></script>
 
  <!-- Svganimation scripts -->
  <script src="vendor/svganimation/vivus.min.js"></script>
@@ -87,5 +87,15 @@
  <script src="vendor/fullcalendar/js/fullcalendar.min.js"></script>
  <script src="js/plugins-init/fullcalendar-init.js"></script>
 </body>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./serviceworker.js')
+        .then((reg) => console.log('Success: ', reg.scope))
+        .catch((err) => console.log('Failure: ', err));
+    })
+  }
+</script>
 
 </html>
