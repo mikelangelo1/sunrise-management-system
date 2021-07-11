@@ -24,7 +24,7 @@ export default function Login() {
    // https://sunrise-management-system.herokuapp.com/auth/login
   //  http://localhost:5000/auth/login
 
-   await axios.post("http://localhost:5000/auth/login", {
+   await axios.post("https://sunrise-management-system.herokuapp.com/auth/login", {
     loginData
    },
     {

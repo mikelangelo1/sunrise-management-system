@@ -9,7 +9,7 @@ function AuthContextProvider(props) {
  async function getLoggedIn() {
   // https://sunrise-management-system.herokuapp.com/auth/loggedIn http://localhost:5000/auth/loggedIn
   // http://localhost:5000/auth/loggedIn
-  const loggedInRes = await axios.get("http://localhost:5000/auth/loggedIn");
+  const loggedInRes = await axios.get("https://sunrise-management-system.herokuapp.com/auth/loggedIn");
   setLoggedIn(loggedInRes.data);
  }
 

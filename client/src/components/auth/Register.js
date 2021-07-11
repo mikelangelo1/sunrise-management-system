@@ -26,7 +26,7 @@ export default function Register() {
 
   //  http://localhost:5000/auth/
 
-  await axios.post("http://localhost:5000/auth/", {
+  await axios.post("https://sunrise-management-system.herokuapp.com/auth/", {
    registerData
   },
    {

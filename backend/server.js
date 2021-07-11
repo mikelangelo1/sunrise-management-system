@@ -26,7 +26,7 @@ app.use(
  cors({
   // origin: ['https://skms.netlify.app http://localhost:3001/'],
 //   origin: ['http://localhost:3000'],
-  origin: ['http://localhost:3000'],
+  origin: ['https://skms.netlify.app'],
 
 
   methods: ["GET", "PATCH", "OPTIONS", "POST", "PUT", "DELETE"],
