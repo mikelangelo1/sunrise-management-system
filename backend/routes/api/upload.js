@@ -1,5 +1,5 @@
 const router = require('express').Router();
-let Upload = require('../models/upload.model')
+let Upload = require('../../models/upload.model')
 const multer = require('multer')
 
 // Storage engine for multer

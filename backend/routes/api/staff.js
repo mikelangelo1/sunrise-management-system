@@ -1,6 +1,6 @@
 const router = require('express').Router();
-let Staff = require('../models/staff.model');
-const auth = require('../middleware/auth')
+let Staff = require('../../models/staff.model');
+const auth = require('../../middleware/auth')
 
 // Create Staff
 // router.route('/add-staff').post((req, res) => {

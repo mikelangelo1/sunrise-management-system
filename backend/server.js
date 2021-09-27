@@ -6,10 +6,14 @@ const path = require("path");
 const cookieParser = require('cookie-parser');
 const cors = require("cors");
 const dotenv = require("dotenv");
-dotenv.config();
+const connectDB= require('./config/db');
 
 
 const app = express();
+
+// Connect DB
+connectDB();
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
  console.log(`Server is running on port: ${PORT}`);
@@ -38,34 +42,26 @@ app.get("/", (req, res) => {
  res.send("Server is running.");
 })
 
-const MONGO_URI = 'mongodb+srv://sunrise-keepers-school-management-system:sunrisekeepers@sunrise-keepers-cluster.zulpb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-// mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
-// const uri = process.env.ATLAS_URI
-mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
-const connection = mongoose.connection;
-connection.once('open', () => {
- console.log("MongoDB database connection established successfully")
-},
- error => {
-  console.log('Could not connect to database: ' + error)
- }
-);
 
-const userRouter = require('./routes/user')
-const staffRouter = require('./routes/staff')
-const studentRouter = require('./routes/student')
-const uploadRouter = require('./routes/upload')
+const userRouter = require('./routes/api/user')
+const userAuth = require('./routes/api/auth')
+const staffRouter = require('./routes/api/staff')
+const studentRouter = require('./routes/api/student')
+const uploadRouter = require('./routes/api/upload')
 // const gradeRouter = require('./routes/grade')
 // const expenseRouter = require('./routes/expense')
 // const feesRouter = require('./routes/fees')
 // require('./routes/student')
 // require('./routes/student')
 
-app.use('/auth', userRouter)
+app.use('/api/auth', userRouter)
+app.use('/api/login', userAuth)
 app.use('/staffs', staffRouter)
 app.use('/students', studentRouter)
 app.use('/upload', uploadRouter)
+
+
 // app.use('/grades', gradeRouter)
 // app.use('/expenses', expenseRouter)
 // app.use('/fees', feesRouter)
